@@ -7,7 +7,7 @@
   <!-- you could consider use 'for=youcontent-type' -->
   <browser:viewlet
      name="data-grid-demo-viewlet"
-     for="plone.dexterity.interfaces.IDexterityItem"
+     for="z3cdatagridfield.behaviorexamples.behaviors.datagrid_person.IDatagridPersons"
      manager="plone.app.layout.viewlets.interfaces.IAboveContentTitle"
      layer="z3cdatagridfield.behaviorexamples.interfaces.IDatagridfieldBehaviorexamplesLayer"
      class=".data_grid_demo_viewlet.DataGridDemoViewlet"

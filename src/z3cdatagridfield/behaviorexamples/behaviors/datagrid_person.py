@@ -66,8 +66,11 @@ class IDatagridPersons(model.Schema):
 
 
 #fields['table'].widgetFactory = DataGridFieldFactory
-# 
-# class IDatagridPersonsMarker(Interface):
+#
+class IDatagridPersonsMarker(Interface):
+    """dont need this"""
+
+    
 #       pass
 #
 #

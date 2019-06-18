@@ -9,7 +9,7 @@ from zope.component import getUtility
 import unittest
 
 
-class DatagridPersonIntegrationTest(unittest.TestCase):
+class DatagridPersonsIntegrationTest(unittest.TestCase):
 
     layer = Z3CDATAGRIDFIELD_BEHAVIOREXAMPLES_INTEGRATION_TESTING
 
