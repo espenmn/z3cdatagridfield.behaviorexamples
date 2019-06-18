@@ -32,12 +32,12 @@ class TestSetup(unittest.TestCase):
             'z3cdatagridfield.behaviorexamples'))
 
     def test_browserlayer(self):
-        """Test that IZ3CdatagridfieldBehaviorexamplesLayer is registered."""
+        """Test that IDatagridfieldBehaviorexamplesLayer is registered."""
         from z3cdatagridfield.behaviorexamples.interfaces import (
-            IZ3CdatagridfieldBehaviorexamplesLayer)
+            IDatagridfieldBehaviorexamplesLayer)
         from plone.browserlayer import utils
         self.assertIn(
-            IZ3CdatagridfieldBehaviorexamplesLayer,
+            IDatagridfieldBehaviorexamplesLayer,
             utils.registered_layers())
 
 
@@ -62,10 +62,10 @@ class TestUninstall(unittest.TestCase):
             'z3cdatagridfield.behaviorexamples'))
 
     def test_browserlayer_removed(self):
-        """Test that IZ3CdatagridfieldBehaviorexamplesLayer is removed."""
+        """Test that IDatagridfieldBehaviorexamplesLayer is removed."""
         from z3cdatagridfield.behaviorexamples.interfaces import \
-            IZ3CdatagridfieldBehaviorexamplesLayer
+            IDatagridfieldBehaviorexamplesLayer
         from plone.browserlayer import utils
         self.assertNotIn(
-            IZ3CdatagridfieldBehaviorexamplesLayer,
+            IDatagridfieldBehaviorexamplesLayer,
             utils.registered_layers())

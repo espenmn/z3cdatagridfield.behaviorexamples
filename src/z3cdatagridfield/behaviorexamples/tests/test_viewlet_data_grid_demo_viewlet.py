@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from z3cdatagridfield.behaviorexamples.interfaces import IZ3cdatagridfieldBehaviorexamplesLayer
+from z3cdatagridfield.behaviorexamples.interfaces import IDatagridfieldBehaviorexamplesLayer
 from z3cdatagridfield.behaviorexamples.testing import Z3CDATAGRIDFIELD_BEHAVIOREXAMPLES_FUNCTIONAL_TESTING
 from z3cdatagridfield.behaviorexamples.testing import Z3CDATAGRIDFIELD_BEHAVIOREXAMPLES_INTEGRATION_TESTING
 from plone import api
@@ -28,7 +28,7 @@ class ViewletIntegrationTest(unittest.TestCase):
     def test_data_grid_demo_viewlet_is_registered(self):
         view = BrowserView(self.portal['other-document'], self.request)
         manager_name = 'plone.abovecontenttitle'
-        alsoProvides(self.request, IZ3cdatagridfieldBehaviorexamplesLayer)
+        alsoProvides(self.request, IDatagridfieldBehaviorexamplesLayer)
         manager = queryMultiAdapter(
             (self.portal['other-document'], self.request, view),
             IViewletManager,

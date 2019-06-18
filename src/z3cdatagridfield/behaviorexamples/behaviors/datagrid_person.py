@@ -66,16 +66,16 @@ class IDatagridPersons(model.Schema):
 
 
 #fields['table'].widgetFactory = DataGridFieldFactory
-
-class IDatagridPersonsMarker(Interface):
-      pass
-
-
-@implementer(IDatagridPersons)
-@adapter(IDatagridPersonsMarker)
-class DatagridPersons(object):
-    def __init__(self, context):
-        self.context = context
+# 
+# class IDatagridPersonsMarker(Interface):
+#       pass
+#
+#
+# @implementer(IDatagridPersons)
+# @adapter(IDatagridPersonsMarker)
+# class DatagridPersons(object):
+#     def __init__(self, context):
+#         self.context = context
 
     # @property
     # def group(self):
