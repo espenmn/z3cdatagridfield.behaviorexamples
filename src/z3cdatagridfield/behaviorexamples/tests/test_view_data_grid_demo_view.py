@@ -26,10 +26,10 @@ class ViewsIntegrationTest(unittest.TestCase):
             name='data-grid-demo-view'
         )
         self.assertTrue(view.__name__ == 'data-grid-demo-view')
-        # self.assertTrue(
-        #     'Sample View' in view(),
-        #     'Sample View is not found in data-grid-demo-view'
-        # )
+        self.assertTrue(
+             'Sample View' in view(),
+             'Sample View is not found in data-grid-demo-view'
+        )
 
     def test_data_grid_demo_view_not_matching_interface(self):
         with self.assertRaises(ComponentLookupError):

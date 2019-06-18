@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-
+#common stuff
 from z3cdatagridfield.behaviorexamples import _
 from plone import schema
 from plone.autoform.interfaces import IFormFieldProvider
@@ -9,35 +9,90 @@ from zope.component import adapter
 from zope.interface import Interface
 from zope.interface import implementer
 from zope.interface import provider
+from plone.autoform.directives import widget
+
+#DataGridStuff
+from collective.z3cform.datagridfield import DataGridFieldFactory
+#Note: For control panel and registry you need to import from
+#from collective.z3cform.datagridfield.registry import DictRow
+from collective.z3cform.datagridfield import DictRow
+#Alternative imports
+#from collective.z3cform.datagridfield import BlockDataGridField
+
+#stuff we probably dont need right now
+#from z3c.form import form
+#from z3c.form import field
+#from z3c.form.form import extends
+#from zope import component
 
 
-class IDatagridPersonMarker(Interface):
-    pass
 
-@provider(IFormFieldProvider)
-class IDatagridPerson(model.Schema):
+class IPerson(Interface):
+    """ Fields to be used with DataGridField below
     """
-    """
 
-    project = schema.TextLine(
-        title=_(u'Project'),
-        description=_(u'Give in a project name'),
+    first_name = schema.TextLine(
+        title=_(u'First Name'),
+        description=_(u'First Name'),
+        required=False,
+    )
+
+    last_name = schema.TextLine(
+        title=_(u'Last Name'),
+        description=_(u'Family Name'),
         required=False,
     )
 
 
-@implementer(IDatagridPerson)
-@adapter(IDatagridPersonMarker)
-class DatagridPerson(object):
+@provider(IFormFieldProvider)
+class IDatagridPersons(model.Schema):
+    """
+    Here we use the fields defined in IPerson for field 'table'
+    """
+
+    group = schema.TextLine(
+        title=_(u'Group name'),
+        description=_(u'Group name for persons'),
+        required=False,
+    )
+
+    widget(table=DataGridFieldFactory)
+    table = schema.List(title=u"Persons",
+        value_type=DictRow(title=u"personrow", schema=IPerson),
+        required=False,
+    )
+
+
+
+
+#fields['table'].widgetFactory = DataGridFieldFactory
+
+class IDatagridPersonsMarker(Interface):
+      pass
+
+
+@implementer(IDatagridPersons)
+@adapter(IDatagridPersonsMarker)
+class DatagridPersons(object):
     def __init__(self, context):
         self.context = context
 
-    @property
-    def project(self):
-        if hasattr(self.context, 'project'):
-            return self.context.project
-        return None
-
-    @project.setter
-    def project(self, value):
-        self.context.project = value
+    # @property
+    # def group(self):
+    #     if hasattr(self.context, 'group'):
+    #         return self.context.group
+    #         return None
+    #
+    # @group.setter
+    # def group(self, value):
+    #       self.context.group = value
+    #
+    # @property
+    # def table(self):
+    #     if hasattr(self.context, 'table'):
+    #         return self.context.table
+    #         return None
+    #
+    # @table.setter
+    # def table(self, value):
+    #       self.context.table = value

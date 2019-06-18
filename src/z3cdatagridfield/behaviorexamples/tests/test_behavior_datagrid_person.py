@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from z3cdatagridfield.behaviorexamples.behaviors.datagrid_person import IDatagridPersonMarker
+#from z3cdatagridfield.behaviorexamples.behaviors.datagrid_person import IDatagridPersonMarker
 from z3cdatagridfield.behaviorexamples.testing import Z3CDATAGRIDFIELD_BEHAVIOREXAMPLES_INTEGRATION_TESTING  # noqa
 from plone.app.testing import setRoles
 from plone.app.testing import TEST_USER_ID
@@ -21,6 +21,6 @@ class DatagridPersonIntegrationTest(unittest.TestCase):
     def test_behavior_datagrid_person(self):
         behavior = getUtility(IBehavior, 'z3cdatagridfield.behaviorexamples.datagrid_person')
         self.assertEqual(
-            behavior.marker,
-            IDatagridPersonMarker,
+             behavior.marker,
+             IDatagridPersonMarker,
         )

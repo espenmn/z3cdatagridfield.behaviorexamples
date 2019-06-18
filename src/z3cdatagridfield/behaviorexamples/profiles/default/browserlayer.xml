@@ -2,6 +2,6 @@
 <layers>
   <layer
       name="z3cdatagridfield.behaviorexamples"
-      interface="z3cdatagridfield.behaviorexamples.interfaces.IZ3CdatagridfieldBehaviorexamplesLayer"
+      interface="z3cdatagridfield.behaviorexamples.interfaces.IDatagridfieldBehaviorexamplesLayer"
       />
 </layers>

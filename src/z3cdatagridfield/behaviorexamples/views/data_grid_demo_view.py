@@ -13,5 +13,12 @@ class DataGridDemoView(BrowserView):
     # template = ViewPageTemplateFile('data_grid_demo_view.pt')
 
     def __call__(self):
-        self.msg = _(u'A small message')
         return self.index()
+
+    def get_table(self):
+        return self.context.table
+
+    def get_sorted_table(self):
+        my_table = self.context.table
+        return sorted(my_table, key=lambda k: k['last_name']) 
+        #.sort()

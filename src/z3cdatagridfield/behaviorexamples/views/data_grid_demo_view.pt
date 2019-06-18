@@ -6,13 +6,32 @@
       metal:use-macro="context/main_template/macros/master">
 <body>
     <metal:block fill-slot="content-core">
-      <div class="heading">
-        <li i18n:translate="">
-          Sample View
-        </li>
-      <span tal:content="view/msg">this gets replaced</span>
-      </div>
-    </metal:block>
+      <h1>${context/group}</h1>
+      <p>Everything done in TAL</p>
+      <ol class="datagrid-table">
+        <tal:repeat tal:repeat="row context/table|None">
+          <li>${row/first_name|None} ${row/last_name|None}</li>
+        </tal:repeat>
+      </ol>
 
+      <h1>Alternative approach</h1>
+      <p>Logic is in: using data_grid_demo_view.py</p>
+      <ol class="datagrid-table">
+        <tal:repeat tal:repeat="row view/get_table|None">
+          <li>${row/first_name|None} ${row/last_name|None}</li>
+        </tal:repeat>
+      </ol>
+
+
+      <h1>Sorted approach</h1>
+      <p>Sorting is in data_grid_demo_view.py</p>
+      <ol class="datagrid-table"
+          tal:define="table view/get_sorted_table">
+        <tal:repeat tal:repeat="row view/get_sorted_table">
+          <li>${row/first_name|None} ${row/last_name|None}</li>
+        </tal:repeat>
+      </ol>
+
+    </metal:block>
 <body>
 </html>

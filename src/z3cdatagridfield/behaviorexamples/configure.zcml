@@ -17,7 +17,7 @@
 
   <include package=".views" />
 
-  <include package=".browser" />
+  <!--include package=".browser" /-->
 
   <include file="permissions.zcml" />
 

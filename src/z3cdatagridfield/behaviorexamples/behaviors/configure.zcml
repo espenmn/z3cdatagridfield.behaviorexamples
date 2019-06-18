@@ -11,12 +11,13 @@
 
     <plone:behavior
         name="z3cdatagridfield.behaviorexamples.datagrid_person"
-        title="DatagridPerson"
+        title="Datagrid Persons"
         description="Adds datagridfield with Person fields"
-        provides=".datagrid_person.IDatagridPerson"
-        factory=".datagrid_person.DatagridPerson"
-        marker=".datagrid_person.IDatagridPersonMarker"
+        provides=".datagrid_person.IDatagridPersons"
         />
+
+     <!-- skip factory, it does not play well with all datagridfields
+      factory=".datagrid_person.DatagridPersons"  -->
 
 
 </configure>

@@ -6,25 +6,26 @@
 z3cdatagridfield.behaviorexamples
 =================================
 
-Tell me what your product does
+This add on adds behaviors using datagridfield
+
+
+
 
 Features
 --------
 
-- Can be bullet points
+To showcase / demo there is also
 
+- a content type
+- a view
+- a viewlet
 
-Examples
---------
-
-This add-on can be seen in action at the following sites:
-- Is there a page on the internet where everybody can see the features?
 
 
 Documentation
 -------------
 
-Full documentation for end users can be found in the "docs" folder, and is also available online at http://docs.plone.org/foo/bar
+Please read the comments in the files
 
 
 Translations
@@ -32,7 +33,7 @@ Translations
 
 This product has been translated into
 
-- Klingon (thanks, K'Plai)
+- Nothing, yet
 
 
 Installation
@@ -62,8 +63,7 @@ Contribute
 Support
 -------
 
-If you are having issues, please let us know.
-We have a mailing list located at: project@example.com
+If you are having issues, please let me know, espen at medialog.no
 
 
 License

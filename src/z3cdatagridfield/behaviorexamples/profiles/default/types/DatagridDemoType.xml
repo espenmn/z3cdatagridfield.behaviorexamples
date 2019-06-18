@@ -40,6 +40,7 @@
     <element value="plone.categorization"/>
     <element value="plone.basic"/>
     <element value="plone.locking" />
+    <element value="z3cdatagridfield.behaviorexamples.datagrid_person" />
     <!--<element value="plone.app.referenceablebehavior.referenceable.IReferenceable" />-->
     <!--<element value="plone.leadimage"/>-->
     <!--<element value="plone.relateditems"/>-->
@@ -51,11 +52,11 @@
 
   <!-- View information -->
   <property name="add_view_expr">string:${folder_url}/++add++DatagridDemoType</property>
-  <property name="default_view">view</property>
+  <property name="default_view">data-grid-demo-view</property>
   <property name="default_view_fallback">False</property>
-  <property name="immediate_view">view</property>
+  <property name="immediate_view">data-grid-demo-view</property>
   <property name="view_methods">
-    <element value="view"/>
+    <element value="data-grid-demo-view"/>
   </property>
 
   <!-- Method aliases -->

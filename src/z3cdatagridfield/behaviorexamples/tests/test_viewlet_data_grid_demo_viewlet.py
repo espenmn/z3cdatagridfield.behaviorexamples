@@ -40,22 +40,6 @@ class ViewletIntegrationTest(unittest.TestCase):
         my_viewlet = [v for v in manager.viewlets if v.__name__ == 'data-grid-demo-viewlet']  # NOQA: E501
         self.assertEqual(len(my_viewlet), 1)
 
-    # XXX would be nice to have this test working:
-    # def test_data_grid_demo_viewlet_is_not_available_on_newsitem(self):
-    #     view = BrowserView(self.portal['newsitem'], self.request)
-    #     manager_name = 'plone.abovecontenttitle'
-    #     alsoProvides(self.request, IZ3cdatagridfieldBehaviorexamplesLayer)
-    #     manager = queryMultiAdapter(
-    #         (self.portal['newsitem'], self.request, view),
-    #         IViewletManager,
-    #         manager_name,
-    #         default=None
-    #     )
-    #     self.assertIsNotNone(manager)
-    #     manager.update()
-    #     my_viewlet = [v for v in manager.viewlets if v.__name__ == 'data-grid-demo-viewlet']  # NOQA: E501
-    #     self.assertEqual(len(my_viewlet), 0)
-
 
 class ViewletFunctionalTest(unittest.TestCase):
 

@@ -1,3 +1,16 @@
-<div class="days_to_conf">
-    ${view/message}
+<div class="datagrid-viewlet">
+      <h1>This is a viewlet</h1>
+    <h1>Group:</h1>
+    <p>${context/group}</p>
+
+    <h2>Persons</h2>
+    <ol class="datagrid-table">
+      <tal:repeat tal:repeat="row context/table|None">
+        <li>${row/first_name|None} ${row/last_name|None}</li>
+      </tal:repeat>
+    </ol>
+
+<style>
+  .datagrid-viewlet {padding: 1em; margin-bottom: 2em; background: #EEE}
+</style>
 </div>

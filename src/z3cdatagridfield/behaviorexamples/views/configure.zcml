@@ -6,9 +6,11 @@
 
   -*- extra stuff goes here -*-
 
+  <!-- you could consider use 'for=youcontent-type' -->
+  
   <browser:page
      name="data-grid-demo-view"
-     for="Products.CMFCore.interfaces.IFolderish"
+     for=" plone.dexterity.interfaces.IDexterityItem"
      class=".data_grid_demo_view.DataGridDemoView"
      template="data_grid_demo_view.pt"
      permission="zope2.View"

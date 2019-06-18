@@ -4,5 +4,5 @@
 from zope.publisher.interfaces.browser import IDefaultBrowserLayer
 
 
-class IZ3CdatagridfieldBehaviorexamplesLayer(IDefaultBrowserLayer):
+class IDatagridfieldBehaviorexamplesLayer(IDefaultBrowserLayer):
     """Marker interface that defines a browser layer."""
