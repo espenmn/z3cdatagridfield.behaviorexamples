@@ -1,0 +1,54 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="z3cdatagridfield.behaviorexamples">
+
+  <i18n:registerTranslations directory="locales" />
+
+  <!--
+    Be careful if you use general includeDependencies, it can have sideffects!
+    Better import explicite packages or configurations ;)
+  -->
+  <!--<includeDependencies package="." />-->
+
+  <include package=".viewlets" />
+
+  <include package=".views" />
+
+  <include package=".browser" />
+
+  <include file="permissions.zcml" />
+
+  <include file="upgrades.zcml" />
+
+  <genericsetup:registerProfile
+      name="default"
+      title="z3cdatagridfield.behaviorexamples"
+      directory="profiles/default"
+      description="Installs the z3cdatagridfield.behaviorexamples add-on."
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      post_handler=".setuphandlers.post_install"
+      />
+
+  <genericsetup:registerProfile
+      name="uninstall"
+      title="z3cdatagridfield.behaviorexamples (uninstall)"
+      directory="profiles/uninstall"
+      description="Uninstalls the z3cdatagridfield.behaviorexamples add-on."
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      post_handler=".setuphandlers.uninstall"
+      />
+
+  <utility
+      factory=".setuphandlers.HiddenProfiles"
+      name="z3cdatagridfield.behaviorexamples-hiddenprofiles"
+      />
+
+  <!-- -*- extra stuff goes here -*- -->
+
+    <include package=".behaviors" />
+
+
+</configure>

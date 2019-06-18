@@ -1,0 +1,18 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="z3cdatagridfield.behaviorexamples">
+
+  -*- extra stuff goes here -*-
+
+  <browser:page
+     name="data-grid-demo-view"
+     for="Products.CMFCore.interfaces.IFolderish"
+     class=".data_grid_demo_view.DataGridDemoView"
+     template="data_grid_demo_view.pt"
+     permission="zope2.View"
+     />
+
+
+</configure>

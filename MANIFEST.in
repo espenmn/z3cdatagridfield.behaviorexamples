@@ -1,0 +1,4 @@
+graft src/z3cdatagridfield
+graft docs
+include *.rst
+global-exclude *.pyc

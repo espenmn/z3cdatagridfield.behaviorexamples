@@ -1,0 +1,20 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="z3cdatagridfield.behaviorexamples">
+
+  -*- extra stuff goes here -*-
+
+  <browser:viewlet
+     name="data-grid-demo-viewlet"
+     for="plone.app.contenttypes.interfaces.IDocument"
+     manager="plone.app.layout.viewlets.interfaces.IAboveContentTitle"
+     layer="z3cdatagridfield.behaviorexamples.interfaces.IZ3cdatagridfieldBehaviorexamplesLayer"
+     class=".data_grid_demo_viewlet.DataGridDemoViewlet"
+     template="data_grid_demo_viewlet.pt"
+     permission="zope2.View"
+     />
+
+
+</configure>
