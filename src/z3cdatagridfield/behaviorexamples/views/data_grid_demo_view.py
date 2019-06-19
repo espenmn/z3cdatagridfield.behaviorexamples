@@ -17,8 +17,10 @@ class DataGridDemoView(BrowserView):
 
     def get_table(self):
         return self.context.table
+        # I think we should get the relations here
+        # by looking at the uid of the family relatioon
+
 
     def get_sorted_table(self):
         my_table = self.context.table
-        return sorted(my_table, key=lambda k: k['last_name']) 
-        #.sort()
+        return sorted(my_table, key=lambda k: k['last_name'])

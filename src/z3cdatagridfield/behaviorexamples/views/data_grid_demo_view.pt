@@ -10,7 +10,13 @@
       <p>Everything done in TAL</p>
       <ol class="datagrid-table">
         <tal:repeat tal:repeat="row context/table|None">
-          <li>${row/first_name|None} ${row/last_name|None}</li>
+
+          <li>
+            ${row/first_name|None} ${row/last_name|None}
+            <a href="">   xxx</a>
+            ${row/family_relation/uuid}
+            </li>
+
         </tal:repeat>
       </ol>
 
@@ -31,6 +37,7 @@
           <li>${row/first_name|None} ${row/last_name|None}</li>
         </tal:repeat>
       </ol>
+
 
     </metal:block>
 <body>

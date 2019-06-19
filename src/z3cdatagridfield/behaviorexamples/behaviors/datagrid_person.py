@@ -11,6 +11,11 @@ from zope.interface import implementer
 from zope.interface import provider
 from plone.autoform.directives import widget
 
+#relations
+from plone.app.vocabularies.catalog import CatalogSource
+from z3c.relationfield.schema import RelationChoice
+#from z3c.relationfield.schema import RelationList
+
 #DataGridStuff
 from collective.z3cform.datagridfield import DataGridFieldFactory
 #Note: For control panel and registry you need to import from
@@ -43,6 +48,15 @@ class IPerson(Interface):
         required=False,
     )
 
+    #we probably need 'many relation fields', since one person can have
+    #several relations to same person
+    #Teoretically, your x-wife is not your brothers wife
+    family_relation = RelationChoice(
+        title=_(u"Realation"),
+        source=CatalogSource(portal_type=['DatagridDemoType', 'Person', 'etc']),
+        required=False,
+    )
+
 
 @provider(IFormFieldProvider)
 class IDatagridPersons(model.Schema):
@@ -70,7 +84,7 @@ class IDatagridPersons(model.Schema):
 class IDatagridPersonsMarker(Interface):
     """dont need this"""
 
-    
+
 #       pass
 #
 #
