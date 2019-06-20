@@ -13,8 +13,6 @@
 
           <li>
             ${row/first_name|None} ${row/last_name|None}
-            <a href="">   xxx</a>
-            ${row/family_relation/uuid}
             </li>
 
         </tal:repeat>
@@ -23,8 +21,10 @@
       <h1>Alternative approach</h1>
       <p>Logic is in: using data_grid_demo_view.py</p>
       <ol class="datagrid-table">
-        <tal:repeat tal:repeat="row view/get_table|None">
-          <li>${row/first_name|None} ${row/last_name|None}</li>
+        <tal:repeat tal:repeat="row view/get_table">
+          <li>${row/first_name|None} ${row/last_name|None}
+            Relation: <a href="${row/item/absolute_url}">${row/item/Title}</a>
+          </li>
         </tal:repeat>
       </ol>
 
@@ -34,7 +34,9 @@
       <ol class="datagrid-table"
           tal:define="table view/get_sorted_table">
         <tal:repeat tal:repeat="row view/get_sorted_table">
-          <li>${row/first_name|None} ${row/last_name|None}</li>
+          <li>${row/first_name|None} ${row/last_name|None}<br/>
+            Relation: <a href="${row/item/absolute_url}">${row/item/Title}</a>
+          </li>
         </tal:repeat>
       </ol>
 
