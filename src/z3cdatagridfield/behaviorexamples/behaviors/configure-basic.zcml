@@ -7,24 +7,11 @@
 
     <include package="plone.behavior" file="meta.zcml"/>
 
-    <!-- -*- extra stuff goes here -*- -->
-
-    <plone:behavior
-        name="z3cdatagridfield.behaviorexamples.datagrid_person"
-        title="Datagrid Persons"
-        description="Adds datagridfield with Person fields"
-        provides=".datagrid_person.IDatagridPersons"
-        />
-
-     <!-- skip factory, it does not play well with all datagridfields
-      factory=".datagrid_person.DatagridPersons"  -->
-
       <plone:behavior
           name="z3cdatagridfield.behaviorexamples.datagrid_basic"
           title="Datagrid Superbasic behavior"
           description="Adds datagridfield with two fields"
           provides=".datagrid_basic.IBasicstuff"
           />
-
 
 </configure>
